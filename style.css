@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -38,7 +39,7 @@ body {
 .overlay {
   width: 50%;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.5); /* שכבת רקע כהה שקופה */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +51,10 @@ body {
 }
 
 .right {
-  text-align: right;
+  text-align: left;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact {
@@ -67,4 +71,21 @@ body {
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .overlay {
+    width: 100%;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .right {
+    align-items: flex-start;
+  }
 }
