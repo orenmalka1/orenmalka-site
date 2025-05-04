@@ -55,13 +55,6 @@ body {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  direction: ltr;
-}
-
-.right h2,
-.right p {
-  align-self: flex-end;
-  text-align: left;
 }
 
 .contact {
