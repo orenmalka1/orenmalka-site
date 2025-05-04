@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oren Malka – A Mind in Balance</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .navbar {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+    .navbar a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background-color: #e0e0e0;
+    }
+    .slider-container {
+      margin-top: 2rem;
+    }
+    .slider-label {
+      font-weight: bold;
+    }
+    #balanceSlider {
+      width: 60%;
+      margin-top: 1rem;
+    }
+    .dynamic-text {
+      margin-top: 1rem;
+      font-style: italic;
+      transition: all 0.5s ease;
+    }
+    .split {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      background-image: url('brain.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .column {
+      width: 45%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    .left-content {
+      direction: ltr;
+    }
+    .right-content {
+      direction: ltr;
+      text-align: left;
+    }
+    .contact {
+      text-align: center;
+      padding: 2rem;
+    }
+    .button {
+      background: #333;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#hero">Home</a>
+    <a href="#profile">Who I Am</a>
+    <a href="#contact">Let's Talk</a>
+  </nav>
+
+  <section id="hero" class="hero">
+    <h1>Hi, I'm Oren</h1>
+    <p>Half tech brain, half creative soul.</p>
+
+    <div class="slider-container">
+      <label for="balanceSlider" class="slider-label">Balance: 🧠 ← → 🎨</label><br>
+      <input type="range" id="balanceSlider" min="0" max="100" value="50">
+      <div id="dynamicText" class="dynamic-text">
+        I blend analytical thinking with creative passion.
+      </div>
+    </div>
+  </section>
+
+  <section id="profile" class="split">
+    <div class="column left-content">
+      <div class="content-box">
+        <h2>The Professional Side</h2>
+        <p>I’m a Systems Analyst with a degree in Industrial Engineering and Information Systems from Ben-Gurion University.</p>
+        <p>I write clear specs, configure complex systems, and deeply understand SQL and data flows.</p>
+        <p>I thrive at the interface between users, developers, and product teams.</p>
+      </div>
+    </div>
+    <div class="column right-content">
+      <div class="content-box">
+        <h2>The Creative Side</h2>
+        <p>I’m building an online Rubik’s Cube course – a teaching method based on understanding, not memorization.</p>
+        <p>I admire clever advertising and love ideas with a twist.</p>
+        <p>This side isn’t a hobby – it’s a way of thinking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Let's Talk</h2>
+    <p>If you're curious – let’s have a conversation.</p>
+    <a href="https://www.linkedin.com/in/orenmalka" target="_blank" class="button">My LinkedIn</a>
+  </section>
+
+  <script>
+    const slider = document.getElementById('balanceSlider');
+    const dynamicText = document.getElementById('dynamicText');
+
+    slider.addEventListener('input', () => {
+      const value = parseInt(slider.value);
+      if (value < 25) {
+        dynamicText.textContent = "I'm a data-driven problem solver focused on results and clarity.";
+      } else if (value < 50) {
+        dynamicText.textContent = "I bring structure and creativity into everything I do.";
+      } else if (value < 75) {
+        dynamicText.textContent = "I invent fun ways to teach, think visually, and love exploring new ideas.";
+      } else {
+        dynamicText.textContent = "I'm building content that teaches creatively and leaves a lasting impact.";
+      }
+    });
+  </script>
+</body>
+</html>

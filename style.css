@@ -1,114 +1,66 @@
+
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  direction: ltr;
-}
-
-.navbar {
-  background-color: #222;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar a {
-  color: #f2f2f2;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+  margin: 0;
+  background: #fdfdfd;
+  color: #333;
 }
 
 .hero {
+  background: #eee;
+  padding: 2em;
   text-align: center;
-  padding: 60px 20px 30px;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-}
-
-.hero h1 {
-  font-size: 3em;
-  margin-bottom: 0.3em;
-}
-
-.hero p {
-  font-size: 1.5em;
-  color: #444;
 }
 
 .slider-container {
-  margin: 20px auto 40px;
-  width: 80%;
-  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 1em;
 }
 
-input[type="range"] {
-  width: 100%;
+.slider-container input[type=range] {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 6px;
+  background: transparent;
+  border-radius: 3px;
+  outline: none;
 }
 
-#slider-text {
-  margin-top: 20px;
-  font-size: 1.2em;
-  font-weight: 500;
-  color: #333;
-  min-height: 80px;
-  transition: all 0.3s ease-in-out;
+.slider-container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #555;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-container input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #555;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon-left, .icon-right {
+  font-size: 1.5em;
 }
 
 .split {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  justify-content: space-around;
+  padding: 2em;
+  gap: 2em;
 }
 
 .left, .right {
-  flex: 1;
-  padding: 40px;
-  box-sizing: border-box;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.left {
-  background: url("brain.jpg") no-repeat center center;
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: rgba(0,0,0,0.5);
-  text-align: right;
-  direction: rtl;
-}
-
-.right {
-  background: url("brain.jpg") no-repeat center center;
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: rgba(255,255,255,0.8);
-  text-align: left;
-  color: #111;
-}
-
-.section.contact {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 24px;
-  background-color: #0077cc;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.button:hover {
-  background-color: #005fa3;
+  width: 45%;
+  transition: all 0.3s ease;
 }
