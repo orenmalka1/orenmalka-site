@@ -1,66 +1,133 @@
+/* style.css */
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #fdfdfd;
-  color: #333;
+  font-family: Arial, sans-serif;
+  direction: ltr;
+  background: url('brain.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .hero {
-  background: #eee;
-  padding: 2em;
   text-align: center;
+  padding: 120px 20px 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
-  gap: 1em;
+  gap: 10px;
+  padding: 20px;
 }
 
-.slider-container input[type=range] {
+.slider-container img {
+  width: 24px;
+  height: 24px;
+}
+
+input[type=range] {
   -webkit-appearance: none;
   width: 300px;
   height: 6px;
   background: transparent;
-  border-radius: 3px;
-  outline: none;
+  cursor: pointer;
+  position: relative;
 }
 
-.slider-container input[type=range]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: white;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #555;
   border-radius: 50%;
+  background: #fff;
   cursor: pointer;
+  margin-top: -7px;
 }
 
-.slider-container input[type=range]::-moz-range-thumb {
+input[type=range]::-moz-range-track {
+  height: 6px;
+  background: white;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #555;
-  border: none;
   border-radius: 50%;
+  background: #fff;
   cursor: pointer;
-}
-
-.icon-left, .icon-right {
-  font-size: 1.5em;
 }
 
 .split {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 2em;
-  gap: 2em;
+  justify-content: space-between;
+  padding: 40px 20px;
+  gap: 20px;
 }
 
-.left, .right {
-  width: 45%;
-  transition: all 0.3s ease;
+.column {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 200px;
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+  .slider-container {
+    flex-direction: column;
+  }
 }

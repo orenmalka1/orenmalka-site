@@ -1,52 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Oren Malka - Brain in Balance</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oren Malka - Professional Mind, Creative Soul</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <a href="#hero">Home</a>
+    <a href="#profile">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section id="hero" class="hero">
     <h1>Hi, I'm Oren</h1>
-    <p>Half tech brain, half creative soul.</p>
+    <p>Half analytical, half creative mind.</p>
+    <div class="slider-container">
+      <span class="icon-left">🧠</span>
+      <input type="range" id="contentSlider" min="0" max="100" value="50">
+      <span class="icon-right">🎨</span>
+    </div>
   </section>
 
-  <div class="slider-container">
-    <span class="icon-left">📊</span>
-    <input type="range" id="brainSlider" min="0" max="100" value="50">
-    <span class="icon-right">🎨</span>
-  </div>
-
-  <section class="split">
-    <div class="left">
+  <section id="profile" class="split">
+    <div class="left" id="professionalContent">
       <h2>The Professional Side</h2>
-      <p id="professionalText">I'm a Business System Analyst with a degree in Industrial Engineering and Management from Ben-Gurion University. Skilled in writing specs, configuring systems, and working with SQL and data.</p>
+      <p class="level-1">Industrial Engineering graduate, System Analyst, and SQL expert.</p>
+      <p class="level-2 hidden">Skilled in writing clear specs, working with cross-functional teams, and bridging communication gaps.</p>
+      <p class="level-3 hidden">Extensive experience in complex product configurations, working closely with R&D, product managers, and customers in enterprise environments. Passionate about structured thinking and clean solution design.</p>
     </div>
-    <div class="right">
+    <div class="right" id="creativeContent">
       <h2>The Creative Side</h2>
-      <p id="creativeText">I’m developing an online Rubik’s Cube course focused on understanding rather than memorizing. I also admire brilliant ads and creative twists.</p>
+      <p class="level-1">Lover of ads, puzzles, and witty ideas.</p>
+      <p class="level-2 hidden">Creating a Rubik's Cube online course based on logic and understanding rather than memorization.</p>
+      <p class="level-3 hidden">Exploring the intersection of education and creativity through visual storytelling, marketing psychology, and gamified learning. I believe fun and clarity can go hand in hand.</p>
     </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Let's Talk</h2>
+    <p>If you're curious, let's connect.</p>
+    <a href="https://www.linkedin.com/in/orenmalka" target="_blank" class="button">Visit my LinkedIn</a>
   </section>
 
   <script>
-    const slider = document.getElementById("brainSlider");
-    const professionalText = document.getElementById("professionalText");
-    const creativeText = document.getElementById("creativeText");
+    const slider = document.getElementById('contentSlider');
+    const levels = [1, 2, 3];
 
-    slider.addEventListener("input", () => {
-      const value = parseInt(slider.value);
-      if (value < 33) {
-        professionalText.innerText = "Business System Analyst. Skilled in specs, config, and SQL.";
-        creativeText.innerText = "Love ads. Making a Rubik’s course.";
-      } else if (value < 66) {
-        professionalText.innerText = "I'm a Business System Analyst with a degree in Industrial Engineering and Management from Ben-Gurion University. Skilled in writing specs, configuring systems, and working with SQL and data.";
-        creativeText.innerText = "I’m developing an online Rubik’s Cube course focused on understanding rather than memorizing. I also admire brilliant ads and creative twists.";
-      } else {
-        professionalText.innerText = "The analytical part is important, but what really drives me is creativity. Let’s talk ideas, innovation, and impact.";
-        creativeText.innerText = "I’m building a new kind of learning experience for the Rubik’s Cube — intuitive, visual, and fun. I get inspired by ads that think differently, and I strive to create content with that same spirit.";
-      }
+    function updateContent(sliderValue) {
+      levels.forEach(level => {
+        const proText = document.querySelector(`#professionalContent .level-${level}`);
+        const creativeText = document.querySelector(`#creativeContent .level-${level}`);
+
+        if (sliderValue < 33) {
+          proText.classList.remove('hidden');
+          creativeText.classList.add('hidden');
+        } else if (sliderValue > 66) {
+          proText.classList.add('hidden');
+          creativeText.classList.remove('hidden');
+        } else {
+          if (level === 1) {
+            proText.classList.remove('hidden');
+            creativeText.classList.remove('hidden');
+          } else {
+            proText.classList.add('hidden');
+            creativeText.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    slider.addEventListener('input', () => {
+      updateContent(slider.value);
     });
   </script>
 </body>
