@@ -1,26 +1,88 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: white;
+  background-color: #f9f9f9;
+  color: #333;
+  direction: ltr;
 }
 
-.container {
+.navbar {
+  background-color: #1f1f1f;
+  padding: 1rem;
   display: flex;
-  height: 100vh;
-  background: url("brain.jpg") center/cover no-repeat;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.half {
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background-color: #e3f2fd;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.split .left, .split .right {
   flex: 1;
-  padding: 60px 40px;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow-y: auto;
+  min-width: 280px;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.left {
-  text-align: left;
+h2 {
+  border-bottom: 2px solid #2196f3;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.right {
-  text-align: left;
+.section.contact {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #e8f5e9;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2196f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #1976d2;
+}
+
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
 }
