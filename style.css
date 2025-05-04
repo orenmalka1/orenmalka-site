@@ -1,8 +1,8 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  direction: ltr;
+  background-color: #fff;
+  color: #333;
 }
 
 .navbar {
@@ -27,41 +27,37 @@ body {
 
 .split {
   display: flex;
+  flex-direction: row;
   height: 100vh;
-  color: white;
-  position: relative;
-}
-
-.background-brain {
   background: url('brain.jpg') center center / cover no-repeat;
 }
 
-.overlay {
-  width: 50%;
-  padding: 3rem;
-  background: rgba(0, 0, 0, 0.5);
+.column {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  z-index: 1;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.left {
-  text-align: left;
+.left-content .content-box,
+.right-content .content-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
 }
 
-.right {
+.left-content {
   text-align: left;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
   direction: ltr;
 }
 
-.right h2,
-.right p {
-  align-self: flex-end;
+.right-content {
   text-align: left;
+  direction: ltr;
 }
 
 .contact {
@@ -86,13 +82,12 @@ body {
     height: auto;
   }
 
-  .overlay {
-    width: 100%;
-    text-align: left;
-    padding: 2rem;
+  .column {
+    padding: 1rem;
   }
 
-  .right {
-    align-items: flex-start;
+  .left-content .content-box,
+  .right-content .content-box {
+    margin: 1rem 0;
   }
 }
