@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oren Malka - Analytical Mind, Creative Soul</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#hero">Home</a>
+    <a href="#profile">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="hero" class="hero">
+    <h1>Hi, I'm Oren</h1>
+    <p>Half tech brain, half creative soul.</p>
+  </section>
+
+  <div class="slider-container">
+    <span class="icon-left">🧠</span>
+    <input type="range" min="0" max="100" value="50" class="slider" id="focusSlider">
+    <span class="icon-right">🎨</span>
+  </div>
+
+  <section id="profile" class="split background-image">
+    <div class="left" id="leftContent">
+      <h2>The Professional Side</h2>
+      <p id="leftText">I'm a system analyst with a degree in Industrial Engineering and Management from Ben-Gurion University. I write clear specifications, configure complex systems, and specialize in SQL and data domains. I'm the bridge between users, developers, and product teams.</p>
+    </div>
+    <div class="right" id="rightContent">
+      <h2 class="ltr">The Creative Side</h2>
+      <p class="ltr" id="rightText">I'm developing an online Rubik's Cube course – a method based on understanding, not memorization. I admire brilliant ads and love ideas with a twist. This side of me isn’t just a hobby – it’s a mindset.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Let's Connect</h2>
+    <p>If you're intrigued, let's talk.</p>
+    <a href="https://www.linkedin.com/in/orenmalka" target="_blank" class="button">My LinkedIn</a>
+  </section>
+
+  <script>
+    const slider = document.getElementById("focusSlider");
+    const leftText = document.getElementById("leftText");
+    const rightText = document.getElementById("rightText");
+
+    slider.addEventListener("input", () => {
+      const value = slider.value;
+
+      if (value < 33) {
+        leftText.textContent = "I’m a system analyst with strong experience writing detailed functional specifications, performing configurations across various environments, and leveraging SQL for business insights. I excel in bridging communication between cross-functional teams, ensuring product alignment and technical clarity. I thrive in collaborative environments and bring a structured approach to complex problems.";
+        rightText.textContent = "I love finding creative angles – especially in advertising. My passion for visual storytelling fuels my side projects, including an online Rubik’s Cube course that breaks down logic into engaging steps. But when focused professionally, my creativity supports clarity, not chaos.";
+      } else if (value < 66) {
+        leftText.textContent = "I write clear specifications, configure complex systems, and specialize in SQL and data domains. I bridge gaps between users, developers, and product managers.";
+        rightText.textContent = "I'm developing a Rubik’s Cube course – built on understanding, not memorization. I love clever ads and smart ideas. Creativity is my mindset, not just a hobby.";
+      } else {
+        leftText.textContent = "I have experience in system analysis and working with databases. I enjoy structuring requirements and improving workflows with clear documentation.";
+        rightText.textContent = "My Rubik’s Cube course is one of my proudest creative projects. I design learning that’s intuitive and fun. I draw inspiration from ads, film, and design – creativity energizes me, and I bring that into everything I build.";
+      }
+    });
+  </script>
+</body>
+</html>
