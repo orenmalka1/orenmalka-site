@@ -1,127 +1,81 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  color: #222;
+  background: linear-gradient(to bottom, #e3efff, #ffffff);
 }
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 1em;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: #111;
+  padding: 15px;
+  text-align: center;
 }
 
 .navbar a {
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
-  color: #333;
   font-weight: bold;
 }
 
 .hero {
   text-align: center;
-  padding: 3em 1em;
-  background-color: #ffffff;
-  background-image: url('brain.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #000;
+  padding: 80px 20px 60px;
+  background-color: #e3efff;
 }
 
 .hero h1 {
-  margin-bottom: 0.5em;
+  font-size: 3em;
+  margin-bottom: 10px;
 }
 
-.slider-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 1em;
-  background-color: #f0f0f0;
-}
-
-.slider-container input[type="range"] {
-  width: 300px;
-  appearance: none;
-  background: transparent;
-  height: 6px;
-  border-radius: 3px;
-  background-color: #ccc;
-}
-
-.slider-container input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background-color: #333;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.slider-container input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background-color: #333;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.slider-icon {
-  font-size: 24px;
+.hero .subtext {
+  margin-top: 15px;
+  font-size: 0.95em;
+  color: #555;
 }
 
 .split {
   display: flex;
-  justify-content: space-between;
-  background-image: url('brain.jpg');
+  flex-wrap: wrap;
+  background: url("brain.jpg") center center no-repeat;
   background-size: cover;
-  background-position: center;
-  padding: 2em;
-  color: #000;
+  padding: 60px 20px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .left, .right {
-  width: 45%;
-  padding: 1em;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
   background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
   border-radius: 10px;
 }
 
 .left h2, .right h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
+  margin-top: 0;
 }
 
 .section.contact {
   text-align: center;
-  padding: 2em;
-  background-color: #ffffff;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
 }
 
 .button {
   display: inline-block;
-  padding: 0.75em 1.5em;
-  background-color: #333;
-  color: #fff;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #0077b5;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 1em;
 }
 
 @media (max-width: 768px) {
   .split {
     flex-direction: column;
-  }
-
-  .left, .right {
-    width: 100%;
-    margin-bottom: 1em;
   }
 }
